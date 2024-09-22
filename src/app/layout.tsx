@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PropsWithChildren } from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -7,9 +8,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<PropsWithChildren>) {
   return (
     <html lang="en">
       <body>
