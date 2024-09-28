@@ -12,7 +12,7 @@ export default function RootLayout({
   children,
 }: Readonly<PropsWithChildren>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body>
         <Providers>
           {children}
