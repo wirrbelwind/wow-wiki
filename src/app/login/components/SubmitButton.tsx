@@ -1,3 +1,4 @@
+import { Button } from "@nextui-org/react"
 import { useFormStatus } from "react-dom"
 
 export const SubmitButton = () => {
