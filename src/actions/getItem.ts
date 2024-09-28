@@ -1,6 +1,7 @@
 'use server'
 
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export async function getItem(id: number) {
 	cookies().delete('accessToken')
@@ -20,6 +21,7 @@ export async function getItem(id: number) {
 
 	const itemResponse = await fetch(`https://eu.api.blizzard.com/data/wow/item/${id}?namespace=static-eu&locale=en_US&access_token=${access_token}`)
 	const item = await itemResponse.json()
-	
+
 	return item
 }
+
