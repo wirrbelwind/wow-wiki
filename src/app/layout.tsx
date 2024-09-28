@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PropsWithChildren } from "react";
+import './tailwind.css'
 
 export const metadata: Metadata = {
   title: "Create Next App",
