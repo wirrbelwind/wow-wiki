@@ -1,4 +1,4 @@
-import { getItem } from "@/app/actions"
+import { getItem } from "@/actions/getItem";
 
 export default async function ItemPage({ params: { id } }: { params: { id: string } }) {
 	// const itemResponse = await fetch(`/api/item/${id}`)
