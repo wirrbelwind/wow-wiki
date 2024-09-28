@@ -5,9 +5,13 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
-	const accessToken = cookies().get('accessToken')
-	console.log(accessToken)
-  return NextResponse.redirect(new URL('/login', request.url));
+  if (new URL(request.url).pathname !== '/login') {
+    const accessToken = cookies().get('accessToken')
+    if(!accessToken) {
+      return NextResponse.redirect(new URL('/login', request.url));
+    }
+  }
+  return NextResponse.next()
 }
 
 export const config = {
