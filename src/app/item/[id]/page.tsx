@@ -4,6 +4,7 @@ export default async function ItemPage({ params: { id } }: { params: { id: strin
 	// const itemResponse = await fetch(`/api/item/${id}`)
 	// const item = await itemResponse.json()
 
+	// @ts-expect-error zxc
 	const item = await getItem(id)
 	const mediaHref = item.media.key.href
 

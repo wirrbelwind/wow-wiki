@@ -15,7 +15,6 @@ export default async function Home() {
 
   const itemResponse = await fetch(`https://us.api.blizzard.com/data/wow/search/item?namespace=static-us&name.en_US=Garrosh&orderby=id&_page=1&access_token=${access_token}`)
   const item = await itemResponse.json()
-console.log(item)
   return (
     <div>
       {JSON.stringify(item)}

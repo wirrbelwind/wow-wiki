@@ -1,6 +1,10 @@
 'use server'
 
-export async function getItem(id) {
+import { cookies } from "next/headers";
+
+export async function getItem(id: number) {
+	cookies().delete('accessToken')
+
 	const auth = Buffer.from(`${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET}`).toString('base64');
 
 	const response = await fetch('https://oauth.battle.net/token', {
