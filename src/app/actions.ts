@@ -16,6 +16,6 @@ export async function getItem(id) {
 
 	const itemResponse = await fetch(`https://eu.api.blizzard.com/data/wow/item/${id}?namespace=static-eu&locale=en_US&access_token=${access_token}`)
 	const item = await itemResponse.json()
-
-	return {item}
+	
+	return item
 }
