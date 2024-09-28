@@ -1,5 +1,6 @@
 'use server'
 
+import { ACCESS_TOKEN_COOKIES_KEY } from "@/constants";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -30,7 +31,7 @@ export async function login(state: object, formData: FormData) {
 	}
 
 	const cookiesManager = cookies()
-	cookiesManager.set('accessToken', authData.access_token)
+	cookiesManager.set(ACCESS_TOKEN_COOKIES_KEY, authData.access_token)
 
 	redirect('/')
 }
