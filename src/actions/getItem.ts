@@ -1,8 +1,8 @@
 'use server'
 
-import { ACCESS_TOKEN_COOKIES_KEY } from "@/constants";
 import { cookies } from "next/headers";
 import { redirect } from "@/lib/i18n";
+import { ACCESS_TOKEN_COOKIES_KEY } from "@/features/auth/config";
 
 export async function getItem(id: number) {
 	const accessToken = cookies().get(ACCESS_TOKEN_COOKIES_KEY)?.value
