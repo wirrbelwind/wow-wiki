@@ -9,7 +9,7 @@ export const LoginForm = () => {
 	const [state, action] = useFormState(login, undefined)
 
 	return (
-		<form className="w-5/12" method="POST" action={action}>
+		<form className="w-5/12" action={action}>
 			<Input name="clientId" type="text" label="Client ID" />
 			<Input name="clientSecret" type="text" label="Client secret" className="mt-4" />
 
