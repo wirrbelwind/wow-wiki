@@ -4,6 +4,7 @@ import { PropsWithChildren } from "react";
 import './tailwind.css'
 import { Providers } from "./providers"
 import { languageTag } from "@/features/localization";
+import { GlobalHeader } from "@/widgets/GlobalHeader";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <html lang={languageTag()} className="dark">
         <body>
           <Providers>
+            <GlobalHeader />
             {children}
           </Providers>
         </body>
