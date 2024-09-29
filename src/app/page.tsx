@@ -1,11 +1,13 @@
-import * as m from "@/paraglide/messages.js"
+import * as m from "@/features/localization/paraglide/messages.js"
+import Link from "next/link";
 
 export default async function Home() {
-  
+
   return (
     <div>
-     123
-     {m.hello()}
+      123
+      {m.hello()}
+      <Link href="/login">Login</Link>
     </div>
   );
 }

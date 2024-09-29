@@ -1,8 +1,8 @@
 'use server'
 
 import { cookies } from "next/headers";
-import { redirect } from "@/lib/i18n";
 import { ACCESS_TOKEN_COOKIES_KEY } from "@/features/auth/config";
+import { redirect } from "next/navigation";
 
 export async function login(state: object, formData: FormData) {
 	const clientId = formData.get('clientId')

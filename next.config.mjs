@@ -4,8 +4,8 @@ const nextConfig = {};
 
 export default paraglide({
 	paraglide: {
-		project: "./project.inlang",
-		outdir: "./src/paraglide"
+		project: "./src/features/localization/project.inlang",
+		outdir: "./src/features/localization/paraglide"
 	},
 	...nextConfig
 });

@@ -1,5 +1,5 @@
 import { LanguageProvider } from "@inlang/paraglide-next"
-import { languageTag } from "@/paraglide/runtime.js"
+import { languageTag } from "@/features/localization/paraglide/runtime.js"
 import type { Metadata } from "next";
 import { PropsWithChildren } from "react";
 import './tailwind.css'
@@ -16,14 +16,14 @@ export default function RootLayout({
 }: Readonly<PropsWithChildren>) {
   return (
     <LanguageProvider>
-   <html lang={languageTag()} className="dark">
-      <body>
-        <Providers>
-          <LanguageSelector />
-          {children}
-        </Providers>
-      </body>
-    </html>
- </LanguageProvider>
+      <html lang={languageTag()} className="dark">
+        <body>
+          <Providers>
+            <LanguageSelector />
+            {children}
+          </Providers>
+        </body>
+      </html>
+    </LanguageProvider>
   );
 }
