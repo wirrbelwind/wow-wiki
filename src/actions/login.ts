@@ -2,7 +2,7 @@
 
 import { ACCESS_TOKEN_COOKIES_KEY } from "@/constants";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+import { redirect } from "@/lib/i18n";
 
 export async function login(state: object, formData: FormData) {
 	const clientId = formData.get('clientId')
