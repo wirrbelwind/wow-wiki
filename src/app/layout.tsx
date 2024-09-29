@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PropsWithChildren } from "react";
 import './tailwind.css'
 import { Providers } from "./providers"
+import { LanguageSelector } from "@/features/localization/LanguageSelector";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body>
         <Providers>
+          <LanguageSelector />
           {children}
         </Providers>
       </body>
