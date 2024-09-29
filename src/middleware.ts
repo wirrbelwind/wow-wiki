@@ -1,7 +1,7 @@
 // middleware.ts
 
 import { cookies } from "next/headers";
-import type { NextRequest } from "next/server";
+import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { ACCESS_TOKEN_COOKIES_KEY } from "./constants";
 import { middleware as paraglideMiddleware } from "@/lib/i18n"
