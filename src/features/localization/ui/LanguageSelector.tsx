@@ -1,8 +1,8 @@
 'use client'
-import { AvailableLanguageTag, languageTag } from "@/features/localization/paraglide/runtime"
+import { AvailableLanguageTag, languageTag } from "@/features/localization/model/paraglide/runtime"
 import React, { ChangeEventHandler } from "react"
 import { localeList } from "./config"
-import { useRouter } from "./i18n"
+import { useRouter } from "./model/i18n"
 
 export const LanguageSelector = () => {
 	const router = useRouter()

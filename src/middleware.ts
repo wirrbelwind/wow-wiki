@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { ACCESS_TOKEN_COOKIES_KEY } from "./features/auth/config";
-import { paraglideMiddleware } from "./features/localization/i18n";
+import { paraglideMiddleware } from "./features/localization/model/i18n";
 
 export function middleware(request: NextRequest) {
   if (new URL(request.url).pathname !== '/login') {

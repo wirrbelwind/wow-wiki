@@ -1,4 +1,4 @@
-import { Locale } from "./type";
+import { Locale } from "./types";
 
 export const localeList: Locale[] = [
 	{ value: "en-us", title: "English (United States)" },

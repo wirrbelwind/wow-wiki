@@ -1,4 +1,4 @@
-import * as m from "@/features/localization/paraglide/messages.js"
+import * as m from "@/features/localization/model/paraglide/messages.js"
 import Link from "next/link";
 
 export default async function Home() {

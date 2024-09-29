@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { ACCESS_TOKEN_COOKIES_KEY } from "@/features/auth/config";
 import { redirect } from "next/navigation";
 
-export async function login(state: object, formData: FormData) {
+export async function login(_: unknown, formData: FormData) {
 	const clientId = formData.get('clientId')
 	const clientSecret = formData.get('clientSecret')
 

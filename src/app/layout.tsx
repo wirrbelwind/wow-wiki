@@ -1,10 +1,10 @@
 import { LanguageProvider } from "@inlang/paraglide-next"
-import { languageTag } from "@/features/localization/paraglide/runtime.js"
+import { languageTag } from "@/features/localization/model/paraglide/runtime.js"
 import type { Metadata } from "next";
 import { PropsWithChildren } from "react";
 import './tailwind.css'
 import { Providers } from "./providers"
-import { LanguageSelector } from "@/features/localization/LanguageSelector";
+import { LanguageSelector } from "@/features/localization";
 
 export const metadata: Metadata = {
   title: "Create Next App",
