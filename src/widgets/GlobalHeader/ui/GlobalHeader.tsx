@@ -1,10 +1,10 @@
 import { LanguageSelector } from "@/features/localization"
-import { getActiveBNRegion } from "@/features/localization/model/getActiveBNRegion"
+import { getActiveRegion } from "@/features/localization/model/getActiveRegion"
 import { getLocalesOptions } from "@/features/localization/model/getLocalesOptions"
 import { RegionSelector } from "@/features/localization/ui/RegionSelector"
 
 export const GlobalHeader = async () => {
-	const {regionKey} = await getActiveBNRegion()
+	const { regionKey } = await getActiveRegion()
 	const localesOptions = await getLocalesOptions()
 
 	return (

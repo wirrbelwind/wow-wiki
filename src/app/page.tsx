@@ -1,18 +1,18 @@
 import { getActiveLocale } from "@/features/localization";
-import { getActiveBNRegion } from "@/features/localization/model/getActiveBNRegion";
+import { getActiveRegion } from "@/features/localization/model/getActiveRegion";
 
 export default async function Home() {
-  const locale = getActiveLocale()
-  const region = await getActiveBNRegion()
+  // const locale = getActiveLocale()
+  const region = await getActiveRegion()
 
   return (
     <div>
       <div>
-      locale: {locale}
+        {/* locale: {locale} */}
       </div>
 
       <div>
-      region: {region.regionKey}
+        {JSON.stringify(region)}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { regionsOptions, localeTitles } from "../config"
 import { LocaleOption } from "../types"
-import { getActiveBNRegion } from "./getActiveBNRegion"
+import { getActiveBNRegion } from "./getActiveRegion"
 
 export const getLocalesOptions = async () => {
 	const {

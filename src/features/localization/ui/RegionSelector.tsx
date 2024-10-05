@@ -14,8 +14,7 @@ export const RegionSelector: React.FC<RegionSelectorProps> = ({ activeRegion }) 
 
 	const handleChange: ChangeEventHandler<HTMLSelectElement> = async (event) => {
 		const region = event.currentTarget.value as RegionKeyBN
-		const newLocale = await changeBNRegion(region)
-		router.push(window.location.pathname, { newLocale: newLocale.newLocale })
+		changeBNRegion(region)
 	}
 
 	return (

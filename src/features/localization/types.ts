@@ -22,6 +22,8 @@ export type RegionKeyBN = 'cn' |
 export interface Region {
 	regionKey: RegionKeyBN
 	hosting: RegionBNHost
+
+	localeKey: Locale
 }
 
 export type RegionBNHost = `${'http' | 'https'}://${string}.${string}`;

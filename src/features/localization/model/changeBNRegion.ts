@@ -1,11 +1,11 @@
 'use server'
 
 import { cookies } from "next/headers"
-import { RegionBN } from "../types"
-import { getActiveBNRegion } from "./getActiveBNRegion"
+import { getActiveBNRegion } from "./getActiveRegion"
 import { regionsOptions } from "../config"
 import { getActiveLocale } from "./getActiveLocale"
 import { redirect } from "next/navigation"
+import { redirectI18n } from "./i18n"
 
 export const changeBNRegion = async (regionTag: RegionBN) => {
 	const cookiesManager = cookies()
@@ -32,7 +32,5 @@ export const changeBNRegion = async (regionTag: RegionBN) => {
 	const firstLocaleOfTurnedRegion = regionData.availableLocales[0]
 	// cookiesManager.set('NEXT_LOCALE', firstLocaleOfTurnedRegion)
 
-	return {
-		newLocale: firstLocaleOfTurnedRegion
-	}
+	redirectI18n('/')
 }
