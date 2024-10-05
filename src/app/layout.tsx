@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { PropsWithChildren } from "react";
 import './tailwind.css'
 import { Providers } from "./providers"
-import { languageTag } from "@/features/localization";
 import { GlobalHeader } from "@/widgets/GlobalHeader";
+import { getActiveLocale } from "@/features/localization";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }: Readonly<PropsWithChildren>) {
   return (
     <LanguageProvider>
-      <html lang={languageTag()} className="dark">
+      <html lang={getActiveLocale()} className="dark">
         <body>
           <Providers>
             <GlobalHeader />

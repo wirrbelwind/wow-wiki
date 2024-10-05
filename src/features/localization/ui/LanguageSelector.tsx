@@ -1,8 +1,9 @@
 'use client'
 import React, { ChangeEventHandler } from "react"
 import { useRouterI18n } from "../model/i18n"
-import { localeList } from "../config"
-import { AvailableLanguageTag, languageTag } from "../model/paraglide/runtime"
+import { localeOptions } from "../config"
+import { AvailableLanguageTag } from "../model/paraglide/runtime"
+import { getActiveLocale } from "../model/getActiveLocale"
 
 export const LanguageSelector = () => {
 	const router = useRouterI18n()
@@ -12,7 +13,7 @@ export const LanguageSelector = () => {
 		router.push(window.location.pathname, { locale })
 	}
 
-	const activeLocale = languageTag()
+	const activeLocale = getActiveLocale()
 
 	return (
 		<select
@@ -21,7 +22,7 @@ export const LanguageSelector = () => {
 			onChange={handleChange}
 		>
 			{
-				localeList.map((locale, index) => (
+				localeOptions.map((locale, index) => (
 					<option
 						key={index}
 						value={locale.value}
