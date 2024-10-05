@@ -1,17 +1,24 @@
 'use server'
 
 import { cookies } from "next/headers"
-import { RegionBN } from "../types"
-import { BN_REGION_COOKIE_KEY, defaultBNRegion } from "../config"
+import { Region, RegionKeyBN } from "../types"
+import { BN_REGION_COOKIE_KEY, defaultRegionKeyBN, regionHostingList } from "../config"
 
-export const getActiveBNRegion = async (): Promise<RegionBN> => {
+export const getActiveBNRegion = async (): Promise<Region> => {
 	const cookiesManager = cookies()
-	const activeBNRegion = cookiesManager.get(BN_REGION_COOKIE_KEY)?.value as RegionBN
+	const activeRegionKeyBN = cookiesManager.get(BN_REGION_COOKIE_KEY)?.value as RegionKeyBN
 
-	if(activeBNRegion) {
-		return activeBNRegion
+	if (activeRegionKeyBN) {
+		return {
+			regionKey: activeRegionKeyBN,
+			hosting: regionHostingList[activeRegionKeyBN],
+		}
 	}
 
-	cookiesManager.set(BN_REGION_COOKIE_KEY, defaultBNRegion)
-	return defaultBNRegion
+	cookiesManager.set(BN_REGION_COOKIE_KEY, defaultRegionKeyBN)
+
+	return {
+		regionKey: defaultRegionKeyBN,
+		hosting: regionHostingList[defaultRegionKeyBN]
+	}
 }

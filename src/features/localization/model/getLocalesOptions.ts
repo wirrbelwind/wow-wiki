@@ -3,11 +3,12 @@ import { LocaleOption } from "../types"
 import { getActiveBNRegion } from "./getActiveBNRegion"
 
 export const getLocalesOptions = async () => {
-	const activeRegion = await getActiveBNRegion()
-	const locales = regionsOptions.find(region => region.value === activeRegion)?.availableLocales
-	console.log(activeRegion)
+	const {
+		regionKey: activeRegionKey
+	} = await getActiveBNRegion()
+	const locales = regionsOptions.find(region => region.value === activeRegionKey)?.availableLocales
 	if (!locales) {
-		throw new Error(`Locales of region ${activeRegion} not found`)
+		throw new Error(`Locales of region ${activeRegionKey} not found`)
 	}
 
 	const options: LocaleOption[] = locales.map(locale => {

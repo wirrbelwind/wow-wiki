@@ -4,13 +4,13 @@ import { getLocalesOptions } from "@/features/localization/model/getLocalesOptio
 import { RegionSelector } from "@/features/localization/ui/RegionSelector"
 
 export const GlobalHeader = async () => {
-	const activeRegion = await getActiveBNRegion()
+	const {regionKey} = await getActiveBNRegion()
 	const localesOptions = await getLocalesOptions()
 
 	return (
 		<div className="border-b-orange-600 border-b-2 flex px-4 py-6">
 			<div className="ml-auto">
-				<RegionSelector activeRegion={activeRegion} />
+				<RegionSelector activeRegion={regionKey} />
 				<LanguageSelector localesOptions={localesOptions} />
 			</div>
 		</div>

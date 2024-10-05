@@ -1,17 +1,21 @@
 'use client'
 import { ChangeEventHandler } from "react"
-import { RegionBN } from "../types"
 import { changeBNRegion } from "../model/changeBNRegion"
 import { regionsOptions } from "../config"
+import { RegionKeyBN } from "../types"
+import { useRouterI18n } from "../model/i18n"
 
 interface RegionSelectorProps {
-	activeRegion: RegionBN
+	activeRegion: RegionKeyBN
 }
 
 export const RegionSelector: React.FC<RegionSelectorProps> = ({ activeRegion }) => {
-	const handleChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-		const region = event.currentTarget.value as RegionBN
-		changeBNRegion(region)
+	const router = useRouterI18n()
+
+	const handleChange: ChangeEventHandler<HTMLSelectElement> = async (event) => {
+		const region = event.currentTarget.value as RegionKeyBN
+		const newLocale = await changeBNRegion(region)
+		router.push(window.location.pathname, { newLocale: newLocale.newLocale })
 	}
 
 	return (

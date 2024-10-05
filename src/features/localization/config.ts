@@ -1,4 +1,4 @@
-import { RegionBNHost, RegionBNOption, RegionBN, Locale } from "./types";
+import { RegionBNHost, RegionBNOption, RegionKeyBN, Locale } from "./types";
 
 // Titles are not localized
 export const localeTitles: Record<Locale, string> = {
@@ -15,7 +15,7 @@ export const localeTitles: Record<Locale, string> = {
 	"zh-tw": "中文 (繁體)",
 	"zh-cn": "中文 (简体)"
 };
-export const regionHostingList: Record<RegionBN, RegionBNHost> = {
+export const regionHostingList: Record<RegionKeyBN, RegionBNHost> = {
 	'us': 'https://us.api.blizzard.com',
 	'eu': 'https://eu.api.blizzard.com',
 	'kr': 'https://kr.api.blizzard.com',
@@ -65,6 +65,6 @@ export const regionsOptions: RegionBNOption[] = [
 	}
 ]
 
-export const defaultBNRegion: RegionBN = 'eu'
+export const defaultRegionKeyBN: RegionKeyBN = 'eu'
 
 export const BN_REGION_COOKIE_KEY = "BN_REGION"

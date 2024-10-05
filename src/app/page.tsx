@@ -1,16 +1,18 @@
-import { getActiveLocale } from "@/features/localization/model/getActiveLocale";
-import { cookies } from "next/headers";
+import { getActiveLocale } from "@/features/localization";
+import { getActiveBNRegion } from "@/features/localization/model/getActiveBNRegion";
 
 export default async function Home() {
+  const locale = getActiveLocale()
+  const region = await getActiveBNRegion()
 
   return (
     <div>
       <div>
-        LANG: {getActiveLocale()}
+      locale: {locale}
       </div>
 
       <div>
-        REGION: {cookies().get('BN_REGION')?.value}
+      region: {region.regionKey}
       </div>
     </div>
   );

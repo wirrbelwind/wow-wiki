@@ -8,15 +8,20 @@ export interface LocaleOption {
 	value: Locale
 }
 export interface RegionBNOption {
-	value: RegionBN
+	value: RegionKeyBN
 	title: string
 	availableLocales: Locale[]
 }
 
-export type RegionBN = 'cn' |
+export type RegionKeyBN = 'cn' |
 	'tw' |
 	'kr' |
 	'eu' |
 	'us'
+
+export interface Region {
+	regionKey: RegionKeyBN
+	hosting: RegionBNHost
+}
 
 export type RegionBNHost = `${'http' | 'https'}://${string}.${string}`;
