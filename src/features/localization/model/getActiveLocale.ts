@@ -1,3 +1,4 @@
+import { ParaglideLocale } from "../types";
 import { languageTag } from "./paraglide/runtime";
 
-export const getActiveLocale = () => languageTag()
+export const getActiveLocale = (): ParaglideLocale => languageTag()
