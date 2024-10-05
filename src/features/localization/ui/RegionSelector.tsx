@@ -3,18 +3,18 @@ import { ChangeEventHandler } from "react"
 import { regionOptions } from "../config"
 import { useRouterI18n } from "../model/i18n"
 import { getActiveLocale } from "../model/getActiveLocale"
-import { RegionBattleNetTag } from "../types"
-import { changeBattleNetRegion } from "../model/changeBattleNetRegion"
+import { RegionBNTag } from "../types"
+import { changeBNRegion } from "../model/changeBNRegion"
 import { cookies } from "next/headers"
 
 export const RegionSelector = () => {
 	const router = useRouterI18n()
 
 	const handleChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-		const region = event.currentTarget.value as RegionBattleNetTag
+		const region = event.currentTarget.value as RegionBNTag
 
 
-		changeBattleNetRegion(region)
+		changeBNRegion(region)
 	}
 
 	const activeLocale = getActiveLocale()

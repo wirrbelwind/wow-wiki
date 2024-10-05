@@ -1,4 +1,4 @@
-import { RegionBattleNetHost, RegionBattleNetOption, RegionBattleNetTag, SelectLocaleOption } from "./types";
+import { RegionBNHost, RegionBNOption, RegionBNTag, SelectLocaleOption } from "./types";
 
 export const localeOptions: SelectLocaleOption[] = [
 	{ value: "en-us", title: "English (United States)" },
@@ -15,15 +15,15 @@ export const localeOptions: SelectLocaleOption[] = [
 	{ value: "zh-cn", title: "中文 (简体)" },
 ]
 
-export const regionHostingList: Record<RegionBattleNetTag, RegionBattleNetHost> = {
+export const regionHostingList: Record<RegionBNTag, RegionBNHost> = {
 	'us': 'https://us.api.blizzard.com',
 	'eu': 'https://eu.api.blizzard.com',
 	'kr': 'https://kr.api.blizzard.com',
 	'tw': 'https://tw.api.blizzard.com',
-	'cn': 'https://gateway.battlenet.com.cn'
+	'cn': 'https://gateway.BN.com.cn'
 }
 
-export const regionOptions: RegionBattleNetOption[] = [
+export const regionOptions: RegionBNOption[] = [
 	{
 		value: 'us',
 		title: 'North America',
