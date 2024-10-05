@@ -9,14 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@inlang/paraglide-next": "0.5.2",
     "@nextui-org/react": "^2.4.8",
+    "axios": "^1.7.7",
     "framer-motion": "^11.9.0",
     "next": "14.2.11",
     "react": "^18",
-    "react-dom": "^18",
-    "@inlang/paraglide-next": "0.5.2"
+    "react-dom": "^18"
   },
   "devDependencies": {
+    "@inlang/paraglide-js": "1.11.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -25,7 +27,6 @@
     "eslint-config-next": "14.2.11",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
-    "typescript": "^5",
-    "@inlang/paraglide-js": "1.11.2"
+    "typescript": "^5"
   }
 }
