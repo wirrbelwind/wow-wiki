@@ -1,56 +1,70 @@
-import { RegionBNHost, RegionBNOption, RegionBNTag, SelectLocaleOption } from "./types";
+import { RegionBNHost, RegionBNOption, RegionBN, Locale } from "./types";
 
-export const localeOptions: SelectLocaleOption[] = [
-	{ value: "en-us", title: "English (United States)" },
-	{ value: "es-mx", title: "Español (México)" },
-	{ value: "pt-br", title: "Português (Brasil)" },
-	{ value: "de-de", title: "Deutsch (Deutschland)" },
-	{ value: "en-gb", title: "English (Great Britain)" },
-	{ value: "es-es", title: "Español (España)" },
-	{ value: "fr-fr", title: "Français (France)" },
-	{ value: "it-it", title: "Italiano (Italia)" },
-	{ value: "ru-ru", title: "Русский (Россия)" },
-	{ value: "ko-kr", title: "한국어 (대한민국)" },
-	{ value: "zh-tw", title: "中文 (繁體)" },
-	{ value: "zh-cn", title: "中文 (简体)" },
-]
-
-export const regionHostingList: Record<RegionBNTag, RegionBNHost> = {
+// Titles are not localized
+export const localeTitles: Record<Locale, string> = {
+	"en-us": "English (United States)",
+	"es-mx": "Español (México)",
+	"pt-br": "Português (Brasil)",
+	"de-de": "Deutsch (Deutschland)",
+	"en-gb": "English (Great Britain)",
+	"es-es": "Español (España)",
+	"fr-fr": "Français (France)",
+	"it-it": "Italiano (Italia)",
+	"ru-ru": "Русский (Россия)",
+	"ko-kr": "한국어 (대한민국)",
+	"zh-tw": "中文 (繁體)",
+	"zh-cn": "中文 (简体)"
+};
+export const regionHostingList: Record<RegionBN, RegionBNHost> = {
 	'us': 'https://us.api.blizzard.com',
 	'eu': 'https://eu.api.blizzard.com',
 	'kr': 'https://kr.api.blizzard.com',
 	'tw': 'https://tw.api.blizzard.com',
-	'cn': 'https://gateway.BN.com.cn'
+	'cn': 'https://gateway.battlenet.com.cn'
 }
 
-export const regionOptions: RegionBNOption[] = [
+export const regionsOptions: RegionBNOption[] = [
 	{
-		value: 'us',
+		value: "us",
 		title: 'North America',
 		availableLocales: [
-			'en_US', 'es_MX', 'pt_BR'
+			'en-us', 'es-mx', 'pt-br'
 		]
 	},
 	{
-		value: 'eu',
+		value: "eu",
 		title: 'Europe',
 		availableLocales: [
-			'en_GB',
-			'es_ES',
-			'fr_FR',
-			'ru_RU',
-			'de_DE',
-			'pt_BR',
-			'it_IT'
+			'en-gb',
+			'es-es',
+			'fr-fr',
+			'ru-ru',
+			'de-de',
+			'pt-br',
+			'it-it'
 		]
 	},
 	{
-		value: 'kr',
+		value: "kr",
 		title: 'Korea',
 		availableLocales: [
-			'ko_KR',
-			'zh_TW',
-			'zh_CN'
+			'ko-kr',
+			'zh-tw',
+			'zh-cn'
 		]
+	},
+	{
+		value: "tw",
+		title: "Taiwan",
+		availableLocales: ["zh-tw"]
+	},
+	{
+		value: "cn",
+		title: "China",
+		availableLocales: ["zh-cn"]
 	}
 ]
+
+export const defaultBNRegion: RegionBN = 'eu'
+
+export const BN_REGION_COOKIE_KEY = "BN_REGION"

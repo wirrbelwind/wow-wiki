@@ -6,5 +6,7 @@ const strategy = DetectionStrategy<AvailableLanguageTag>();
 
 export const paraglideMiddleware = Middleware({ strategy });
 export const {
-	useRouter: useRouterI18n
+	useRouter: useRouterI18n,
+	redirect: redirectI18n,
+	
 } = Navigation({ strategy });

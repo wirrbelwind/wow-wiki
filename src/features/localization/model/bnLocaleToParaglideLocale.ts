@@ -1,7 +1,7 @@
-import { LocaleBN, ParaglideLocale } from "../types";
+import { LocaleBN, Locale } from "../types";
 
-export const bnLocaleToParaglideLocale = (locale: ParaglideLocale): LocaleBN => {
-	const [language, region] = locale.split('-')
+export const bnLocaleToLocale = (locale: LocaleBN): Locale => {
+	const [language, region] = locale.split('_')
 
-	return `${language}_${region.toUpperCase()}` as LocaleBN
+	return `${language}-${region.toLowerCase()}` as Locale
 }

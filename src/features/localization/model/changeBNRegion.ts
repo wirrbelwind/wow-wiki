@@ -1,15 +1,33 @@
 'use server'
 
 import { cookies } from "next/headers"
-import { RegionBNTag } from "../types"
+import { RegionBN } from "../types"
+import { getActiveBNRegion } from "./getActiveBNRegion"
+import { regionsOptions } from "../config"
+import { getActiveLocale } from "./getActiveLocale"
 
-export const changeBNRegion = (regionTag: RegionBNTag) => {
+export const changeBNRegion = async (regionTag: RegionBN) => {
 	const cookiesManager = cookies()
-	const activeRegion = cookiesManager.get('BN_REGION')?.value as RegionBNTag | undefined
+	const activeRegion = await getActiveBNRegion()
 
 	if (activeRegion === regionTag) {
 		return
 	}
 
 	cookiesManager.set('BN_REGION', regionTag)
+	const activeLocale = getActiveLocale()
+	const regionData = regionsOptions.find(region => region.value === regionTag)
+
+	if (!regionData) {
+		throw new Error(`Data of region ${regionTag} not found`)
+	}
+
+	const isLocaleExistsInRegion = regionData.availableLocales.includes(activeLocale)
+
+	if (isLocaleExistsInRegion) {
+		return
+	}
+
+	const firstLocaleOfTurnedRegion = regionData.availableLocales[0]
+	cookiesManager.set('NEXT_LOCALE', firstLocaleOfTurnedRegion)
 }

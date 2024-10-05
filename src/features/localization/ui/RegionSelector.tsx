@@ -1,32 +1,27 @@
 'use client'
 import { ChangeEventHandler } from "react"
-import { regionOptions } from "../config"
-import { useRouterI18n } from "../model/i18n"
-import { getActiveLocale } from "../model/getActiveLocale"
-import { RegionBNTag } from "../types"
+import { RegionBN } from "../types"
 import { changeBNRegion } from "../model/changeBNRegion"
-import { cookies } from "next/headers"
+import { regionsOptions } from "../config"
 
-export const RegionSelector = () => {
-	const router = useRouterI18n()
+interface RegionSelectorProps {
+	activeRegion: RegionBN
+}
 
+export const RegionSelector: React.FC<RegionSelectorProps> = ({ activeRegion }) => {
 	const handleChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-		const region = event.currentTarget.value as RegionBNTag
-
-
+		const region = event.currentTarget.value as RegionBN
 		changeBNRegion(region)
 	}
-
-	const activeLocale = getActiveLocale()
 
 	return (
 		<select
 			name="lang"
-			value={activeLocale}
+			value={activeRegion}
 			onChange={handleChange}
 		>
 			{
-				regionOptions.map((region, index) => (
+				regionsOptions.map((region, index) => (
 					<option
 						key={index}
 						value={region.value}
