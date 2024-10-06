@@ -1,8 +1,8 @@
 'use server'
-
 import { getUserCredentials } from "@/features/auth/model/getUserCredentials";
 import { getLocation } from "@/features/localization";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
+import { notFound } from "next/navigation";
 
 export async function getItem(id: number) {
 	const {
@@ -11,17 +11,18 @@ export async function getItem(id: number) {
 
 	const { localeBN, region, regionHosting } = getLocation()
 
-	const response = await axios.get(`${regionHosting}/data/wow/item/${id}`, {
-		params: {
-			namespace: `static-${region}`,
-			locale: localeBN,
-			access_token: accessToken
+		try {
+			const response = await axios.get(`${regionHosting}/data/wow/item/${id}`, {
+				params: {
+					namespace: `static-${region}`,
+					locale: localeBN,
+					access_token: accessToken
+				}
+			})
+		
+			const item = await response.data
+			return item
+		} catch (e) {
+			notFound()
 		}
-	})
-
-	response.status
-	// const response = await fetch(`${regionHosting}/data/wow/item/${id}?namespace=static-${region}&locale=${localeBN}&access_token=${accessToken}`)
-
-	const item = await response.data
-	return item
 }
