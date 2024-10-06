@@ -1,0 +1,43 @@
+{
+	"message": "Request failed with status code 404",
+	"name": "AxiosError",
+	"stack": "AxiosError: Request failed with status code 404\n at settle (webpack-internal:///(rsc)/./node_modules/axios/lib/core/settle.js:24:12)\n at Unzip.handleStreamEnd (webpack-internal:///(rsc)/./node_modules/axios/lib/adapters/http.js:629:71)\n at Unzip.emit (node:events:531:35)\n at endReadableNT (node:internal/streams/readable:1696:12)\n at process.processTicksAndRejections (node:internal/process/task_queues:82:21)\n at Axios.request (webpack-internal:///(rsc)/./node_modules/axios/lib/core/Axios.js:57:41)\n at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n at async getItem (webpack-internal:///(rsc)/./src/actions/getItem.ts:21:26)\n at async ItemPage (webpack-internal:///(rsc)/./src/app/item/[id]/page.tsx:14:18)",
+	"config": {
+		"transitional": {
+			"silentJSONParsing": true,
+			"forcedJSONParsing": true,
+			"clarifyTimeoutError": false
+		},
+		"adapter": [
+			"xhr",
+			"http",
+			"fetch"
+		],
+		"transformRequest": [
+			null
+		],
+		"transformResponse": [
+			null
+		],
+		"timeout": 0,
+		"xsrfCookieName": "XSRF-TOKEN",
+		"xsrfHeaderName": "X-XSRF-TOKEN",
+		"maxContentLength": -1,
+		"maxBodyLength": -1,
+		"env": {},
+		"headers": {
+			"Accept": "application/json, text/plain, */*",
+			"User-Agent": "axios/1.7.7",
+			"Accept-Encoding": "gzip, compress, deflate, br"
+		},
+		"params": {
+			"namespace": "static-us",
+			"locale": "pt_BR",
+			"access_token": "EUDeP1Sfs2He6sbD3bw781hGVajMoCqYOz"
+		},
+		"method": "get",
+		"url": "https://us.api.blizzard.com/data/wow/item/47540"
+	},
+	"code": "ERR_BAD_REQUEST",
+	"status": 404
+}
