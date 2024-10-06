@@ -1,0 +1,204 @@
+{
+	"_links": {
+		"self": {
+			"href": "https://tw.api.blizzard.com/data/wow/item/47549?namespace=static-11.0.2_55938-tw"
+		}
+	},
+	"id": 47549,
+	"name": "麥格尼之堅決",
+	"quality": {
+		"type": "EPIC",
+		"name": "史詩"
+	},
+	"level": 35,
+	"required_level": 30,
+	"media": {
+		"key": {
+			"href": "https://tw.api.blizzard.com/data/wow/media/item/47549?namespace=static-11.0.2_55938-tw"
+		},
+		"id": 47549
+	},
+	"item_class": {
+		"key": {
+			"href": "https://tw.api.blizzard.com/data/wow/item-class/4?namespace=static-11.0.2_55938-tw"
+		},
+		"name": "護甲",
+		"id": 4
+	},
+	"item_subclass": {
+		"key": {
+			"href": "https://tw.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-11.0.2_55938-tw"
+		},
+		"name": "布甲",
+		"id": 1
+	},
+	"inventory_type": {
+		"type": "CLOAK",
+		"name": "背部"
+	},
+	"purchase_price": 511538,
+	"sell_price": 102307,
+	"max_count": 0,
+	"is_equippable": true,
+	"is_stackable": false,
+	"preview_item": {
+		"item": {
+			"key": {
+				"href": "https://tw.api.blizzard.com/data/wow/item/47549?namespace=static-11.0.2_55938-tw"
+			},
+			"id": 47549
+		},
+		"sockets": [
+			{
+				"socket_type": {
+					"type": "PRISMATIC",
+					"name": "多色插槽"
+				}
+			}
+		],
+		"quality": {
+			"type": "EPIC",
+			"name": "史詩"
+		},
+		"name": "麥格尼之堅決",
+		"media": {
+			"key": {
+				"href": "https://tw.api.blizzard.com/data/wow/media/item/47549?namespace=static-11.0.2_55938-tw"
+			},
+			"id": 47549
+		},
+		"item_class": {
+			"key": {
+				"href": "https://tw.api.blizzard.com/data/wow/item-class/4?namespace=static-11.0.2_55938-tw"
+			},
+			"name": "護甲",
+			"id": 4
+		},
+		"item_subclass": {
+			"key": {
+				"href": "https://tw.api.blizzard.com/data/wow/item-class/4/item-subclass/1?namespace=static-11.0.2_55938-tw"
+			},
+			"name": "布甲",
+			"id": 1
+		},
+		"inventory_type": {
+			"type": "CLOAK",
+			"name": "背部"
+		},
+		"binding": {
+			"type": "ON_ACQUIRE",
+			"name": "拾取後綁定"
+		},
+		"armor": {
+			"value": 3,
+			"display": {
+				"display_string": "3點護甲",
+				"color": {
+					"r": 255,
+					"g": 255,
+					"b": 255,
+					"a": 1
+				}
+			}
+		},
+		"stats": [
+			{
+				"type": {
+					"type": "STRENGTH",
+					"name": "力量"
+				},
+				"value": 2,
+				"is_negated": true,
+				"display": {
+					"display_string": "+2力量",
+					"color": {
+						"r": 128,
+						"g": 128,
+						"b": 128,
+						"a": 1
+					}
+				}
+			},
+			{
+				"type": {
+					"type": "STAMINA",
+					"name": "耐力"
+				},
+				"value": 1,
+				"display": {
+					"display_string": "+1耐力",
+					"color": {
+						"r": 255,
+						"g": 255,
+						"b": 255,
+						"a": 1
+					}
+				}
+			},
+			{
+				"type": {
+					"type": "DODGE_RATING",
+					"name": "閃躲"
+				},
+				"value": 1,
+				"is_equip_bonus": true,
+				"display": {
+					"display_string": "+1閃躲",
+					"color": {
+						"r": 0,
+						"g": 255,
+						"b": 0,
+						"a": 1
+					}
+				}
+			},
+			{
+				"type": {
+					"type": "PARRY_RATING",
+					"name": "招架"
+				},
+				"value": 2,
+				"is_equip_bonus": true,
+				"display": {
+					"display_string": "+2招架",
+					"color": {
+						"r": 0,
+						"g": 255,
+						"b": 0,
+						"a": 1
+					}
+				}
+			}
+		],
+		"socket_bonus": "插槽加成：+1耐力",
+		"sell_price": {
+			"value": 281,
+			"display_strings": {
+				"header": "售價:",
+				"gold": "0",
+				"silver": "2",
+				"copper": "81"
+			}
+		},
+		"requirements": {
+			"level": {
+				"value": 30,
+				"display_string": "需要等級30"
+			}
+		},
+		"level": {
+			"value": 35,
+			"display_string": "物品等級35"
+		},
+		"is_subclass_hidden": true
+	},
+	"purchase_quantity": 1,
+	"appearances": [
+		{
+			"key": {
+				"href": "https://tw.api.blizzard.com/data/wow/item-appearance/11883?namespace=static-11.0.2_55938-tw"
+			},
+			"id": 11883
+		}
+	]
+}
