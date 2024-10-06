@@ -5,14 +5,14 @@ import { localeTitles, regionsOptions } from "../config";
 import { useState } from "react";
 import { Locale, RegionKeyBN } from "../types";
 import { useFormState } from "react-dom";
-import { changeRegionAndLocale } from "../model/changeRegionAndLocale";
+import { changeRegionAndLocale } from "../model/actions/changeRegionAndLocale";
 
 interface LocaleSelectorProps {
 	closable: boolean
 	onClose?: () => void
 }
 
-export const LocaleSelector: React.FC<LocaleSelectorProps> = ({ closable, onClose }) => {
+export const LocaleSelectorModal: React.FC<LocaleSelectorProps> = ({ closable, onClose }) => {
 	const [locales, setLocales] = useState<Locale[]>([])
 	const [formState, action] = useFormState(changeRegionAndLocale, undefined)
 

@@ -1,4 +1,4 @@
-import { ButtonOpenLocaleSelector } from "@/features/localization/ui/ButtonOpenLocaleSelector"
+import { ButtonOpenLocaleSelector } from "@/features/localization"
 
 export const GlobalHeader = async () => {
 

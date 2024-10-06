@@ -3,7 +3,7 @@
 import { getUserCredentials } from "@/features/auth/model/getUserCredentials";
 import { getActiveLocale } from "@/features/localization";
 import { getActiveBNRegion } from "@/features/localization/model/getActiveRegion";
-import { localeToBNLocale } from "@/features/localization/model/localeToBNLocale";
+import { localeToBNLocale } from "@/features/localization/model/convert-locale/localeToBNLocale";
 
 export async function getItem(id: number) {
 	const {

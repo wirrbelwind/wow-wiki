@@ -1,9 +1,8 @@
 'use server'
 
 import { cookies } from "next/headers"
-import { BN_REGION_COOKIE_KEY, regionsOptions } from "../config"
-import { Locale, RegionKeyBN } from "../types"
-import { localeToBNLocale } from "./localeToBNLocale"
+import { BN_REGION_COOKIE_KEY, regionsOptions } from "../../config"
+import { Locale, RegionKeyBN } from "../../types"
 import { redirect } from "next/navigation"
 
 export const changeRegionAndLocale = async (_: unknown, form: FormData) => {
@@ -40,7 +39,7 @@ export const changeRegionAndLocale = async (_: unknown, form: FormData) => {
 
 	cookie.set(BN_REGION_COOKIE_KEY, regionKey)
 	cookie.set('NEXT_LOCALE', locale)
-	
+
 
 	redirect('/')
 }

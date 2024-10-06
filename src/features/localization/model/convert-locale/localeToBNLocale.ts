@@ -1,4 +1,4 @@
-import { LocaleBN, Locale } from "../types";
+import { LocaleBN, Locale } from "../../types";
 
 export const localeToBNLocale = (locale: Locale): LocaleBN => {
 	const [language, region] = locale.split('-')
