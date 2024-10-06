@@ -38,7 +38,9 @@ export const changeRegionAndLocale = async (_: unknown, form: FormData) => {
 	const cookie = cookies()
 
 	cookie.set(BN_REGION_COOKIE_KEY, regionKey)
-	cookie.set('NEXT_LOCALE', locale)
+	cookie.set('NEXT_LOCALE', locale, {
+		path: '/'
+	})
 
 
 	redirect('/')
