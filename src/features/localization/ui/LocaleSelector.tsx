@@ -7,7 +7,12 @@ import { Locale, RegionKeyBN } from "../types";
 import { useFormState } from "react-dom";
 import { changeRegionAndLocale } from "../model/changeRegionAndLocale";
 
-export const RegionLocaleSelector = () => {
+interface LocaleSelectorProps {
+	closable: boolean
+	onClose?: () => void
+}
+
+export const LocaleSelector: React.FC<LocaleSelectorProps> = ({ closable, onClose }) => {
 	const [locales, setLocales] = useState<Locale[]>([])
 	const [formState, action] = useFormState(changeRegionAndLocale, undefined)
 
@@ -17,7 +22,8 @@ export const RegionLocaleSelector = () => {
 			isOpen={true}
 			isDismissable={false}
 			isKeyboardDismissDisabled={true}
-			hideCloseButton
+			hideCloseButton={!closable}
+			onClose={onClose}
 		>
 			<ModalContent>
 				<>

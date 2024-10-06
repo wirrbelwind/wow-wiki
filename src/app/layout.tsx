@@ -4,9 +4,9 @@ import { PropsWithChildren } from "react";
 import './tailwind.css'
 import { Providers } from "./providers"
 import { GlobalHeader } from "@/widgets/GlobalHeader";
-import { getActiveLocale } from "@/features/localization";
-import { cookies } from "next/headers";
+import { getActiveLocale, RegionLocaleSelector } from "@/features/localization";
 import { validateActiveRegion } from "@/features/localization/model/validateActiveRegion";
+import { LocaleSelector } from "@/features/localization/ui/LocaleSelector";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,12 +16,15 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<PropsWithChildren>) {
+  const isRegionValid = validateActiveRegion()
+
   return (
     <LanguageProvider>
       <html lang={getActiveLocale()} className="dark">
         <body>
           <Providers>
-            {/* <GlobalHeader /> */}
+            {isRegionValid.type !== 'fulfilled' && <LocaleSelector closable={false} />}
+            <GlobalHeader />
             {children}
           </Providers>
         </body>
