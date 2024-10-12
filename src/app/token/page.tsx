@@ -1,10 +1,11 @@
 
 import { getTimeToken } from "@/entities/time-token/model/getToken"
+import { formatMoneyToGold } from "@/shared/utils/formatMoneyToGold"
 
 export default async function TokenPage() {
 	const token = await getTimeToken()
 
-	const price = token.price/100/100
+	const price = formatMoneyToGold(token.price)
 	const date = new Date(token.last_updated_timestamp)
 
 	return (
