@@ -1,0 +1,1 @@
+// All functions, which location I can't decide, will be located here.
