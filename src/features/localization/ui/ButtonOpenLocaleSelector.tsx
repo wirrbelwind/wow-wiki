@@ -6,7 +6,7 @@ export const ButtonOpenLocaleSelector = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
 		<>
-			<Button onPress={onOpen}>Open Modal</Button>
+			<Button onPress={onOpen}>Language</Button>
 			{isOpen && <LocaleSelectorModal closable={true} onClose={onClose} />}
 		</>
 	)
