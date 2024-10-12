@@ -1,6 +1,6 @@
 
+import { getUser } from "@/entities/user/model/getUser"
 import { cookies } from "next/headers"
-import { getLocation } from "./getLocation"
 
 export interface RegionValidationResult {
 	type: 'fulfilled' | 'conflict' | 'empty'
@@ -9,7 +9,7 @@ export interface RegionValidationResult {
 export const validateActiveRegion = (): RegionValidationResult => {
 	const cookiesManager = cookies()
 
-	const {locale, region, regionLocales} = getLocation()
+	const { location: { locale, region, regionLocales } } = getUser()
 
 	if (!locale || !region) {
 		return {

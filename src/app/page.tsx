@@ -1,9 +1,7 @@
-import { getLocation } from "@/features/localization";
-import { BN_REGION_COOKIE_KEY } from "@/features/localization/config";
-import { cookies } from "next/headers";
+import { getUser } from "@/entities/user/model/getUser";
 
 export default async function Home() {
-  const {locale, region} = getLocation()
+  const {location: {locale, region}} = getUser()
 
   return (
     <div>

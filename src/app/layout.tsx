@@ -4,7 +4,8 @@ import { PropsWithChildren } from "react";
 import './tailwind.css'
 import { Providers } from "./providers"
 import { GlobalHeader } from "@/widgets/GlobalHeader";
-import { getLocation, LocaleSelectorModal, validateActiveRegion } from "@/features/localization";
+import { LocaleSelectorModal, validateActiveRegion } from "@/features/localization";
+import { getUser } from "@/entities/user/model/getUser";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,9 +17,11 @@ export default async function RootLayout({
 }: Readonly<PropsWithChildren>) {
   const isRegionValid = validateActiveRegion()
 
+  const { location: { locale } } = getUser()
+  
   return (
     <LanguageProvider>
-      <html lang={getLocation().locale} className="dark">
+      <html lang={locale} className="dark">
         <body>
           <Providers>
             {isRegionValid.type !== 'fulfilled' && <LocaleSelectorModal closable={false} />}

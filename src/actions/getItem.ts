@@ -1,28 +1,27 @@
 'use server'
-import { getUserCredentials } from "@/features/auth/model/getUserCredentials";
-import { getLocation } from "@/features/localization";
+import { getUser } from "@/entities/user/model/getUser";
 import axios, { AxiosError } from "axios";
 import { notFound } from "next/navigation";
 
 export async function getItem(id: number) {
 	const {
-		accessToken
-	} = getUserCredentials()
+		credentials: { accessToken }
+	} = getUser()
 
-	const { localeBN, region, regionHosting } = getLocation()
+	const { location: { localeBN, region, regionHosting } } = getUser()
 
-		try {
-			const response = await axios.get(`${regionHosting}/data/wow/item/${id}`, {
-				params: {
-					namespace: `static-${region}`,
-					locale: localeBN,
-					access_token: accessToken
-				}
-			})
-		
-			const item = await response.data
-			return item
-		} catch (e) {
-			notFound()
-		}
+	try {
+		const response = await axios.get(`${regionHosting}/data/wow/item/${id}`, {
+			params: {
+				namespace: `static-${region}`,
+				locale: localeBN,
+				access_token: accessToken
+			}
+		})
+
+		const item = await response.data
+		return item
+	} catch (e) {
+		notFound()
+	}
 }

@@ -1,5 +1,4 @@
 import { getItem } from "@/actions/getItem";
-import { getUserCredentials } from "@/features/auth/model/getUserCredentials";
 
 export default async function ItemPage({ params: { id } }: { params: { id: string } }) {
 

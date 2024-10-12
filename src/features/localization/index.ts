@@ -4,5 +4,4 @@ export { bnLocaleToDefaultLocale } from './model/convert-locale/bnLocaleToDefaul
 export { localeToBNLocale } from './model/convert-locale/localeToBNLocale'
 export { ButtonOpenLocaleSelector } from './ui/ButtonOpenLocaleSelector'
 export { LocaleSelectorModal } from './ui/LocaleSelectorModal'
-export { getLocation } from './model/getLocation'
 export { paraglideMiddleware } from './model/i18n'
