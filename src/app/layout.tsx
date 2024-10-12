@@ -5,7 +5,7 @@ import './tailwind.css'
 import { Providers } from "./providers"
 import { GlobalHeader } from "@/widgets/GlobalHeader";
 import { LocaleSelectorModal, validateActiveRegion } from "@/features/localization";
-import { getUser } from "@/entities/user/model/getUser";
+import { getUser } from "@/shared/utils/getUser";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +18,7 @@ export default async function RootLayout({
   const isRegionValid = validateActiveRegion()
 
   const { location: { locale } } = getUser()
-  
+
   return (
     <LanguageProvider>
       <html lang={locale} className="dark">

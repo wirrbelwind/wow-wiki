@@ -1,5 +1,5 @@
 
-import { getUser } from "@/entities/user/model/getUser"
+import { getUser } from "@/shared/utils/getUser"
 import { cookies } from "next/headers"
 
 export interface RegionValidationResult {

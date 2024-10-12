@@ -1,5 +1,5 @@
 'use server'
-import { getUser } from "@/entities/user/model/getUser";
+import { getUser } from "@/shared/utils/getUser";
 import axios, { AxiosError } from "axios";
 import { notFound } from "next/navigation";
 

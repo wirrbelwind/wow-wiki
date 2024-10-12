@@ -1,14 +1,14 @@
-import { getUser } from "@/entities/user/model/getUser";
+import { getUser } from "@/shared/utils/getUser";
 
 export default async function Home() {
-  const {location: {locale, region}} = getUser()
+  const { location: { locale, region } } = getUser()
 
   return (
     <div>
       <div>
-      locale: {locale}
-      region: {region}
-       
+        locale: {locale}
+        region: {region}
+
       </div>
       <div>
       </div>

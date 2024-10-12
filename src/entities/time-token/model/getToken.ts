@@ -2,7 +2,7 @@
 
 import { TokenTime } from "../types"
 import axios from "axios"
-import { getUser } from "@/entities/user/model/getUser"
+import { getUser } from "@/shared/utils/getUser"
 
 export const getTimeToken = async (): Promise<TokenTime> => {
 	const { location: { localeBN, region, regionHosting } } = getUser()
