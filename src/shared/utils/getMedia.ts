@@ -1,24 +1,33 @@
 import axios from "axios"
 import { getUser } from "./getUser"
 
-interface MediaRequestData {
+export interface MediaPayload {
 	key: {
 		href: string
 	}
 	id: number
 }
 
-export const getMedia = async (requestData: MediaRequestData): Promise<object> => {
+export interface Media {
+	assets: Asset[]
+}
+export interface Asset {
+	key: string
+	value: string
+	id: number
+}
+
+export const getMedia = async (requestData: MediaPayload): Promise<Asset[]> => {
 	const {
 		credentials: { accessToken }
 	} = getUser()
 
-	const response = await axios.get(requestData.key.href, {
+	const response = await axios.get<Media>(requestData.key.href, {
 		params: {
 			access_token: accessToken
 		}
 	})
 
 	const media = await response.data
-	return media
+	return media.assets
 }

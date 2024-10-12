@@ -1,14 +1,13 @@
 'use server'
 import { getUser } from "@/shared/utils/getUser";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 import { notFound } from "next/navigation";
 
 export async function getItem(id: number) {
 	const {
+		location: { localeBN, region, regionHosting },
 		credentials: { accessToken }
 	} = getUser()
-
-	const { location: { localeBN, region, regionHosting } } = getUser()
 
 	try {
 		const response = await axios.get(`${regionHosting}/data/wow/item/${id}`, {
