@@ -1,0 +1,32 @@
+{
+	"_links": {
+		"self": {
+			"href": "https://us.api.blizzard.com/data/wow/mount/6?namespace=static-11.0.2_55938-us"
+		}
+	},
+	"id": 6,
+	"name": "Brown Horse",
+	"creature_displays": [
+		{
+			"key": {
+				"href": "https://us.api.blizzard.com/data/wow/media/creature-display/2404?namespace=static-11.0.2_55938-us"
+			},
+			"id": 2404
+		}
+	],
+	"description": "A favorite among Stormwind's guards thanks to its patience and stamina.",
+	"source": {
+		"type": "VENDOR",
+		"name": "Vendor"
+	},
+	"faction": {
+		"type": "ALLIANCE",
+		"name": "Alliance"
+	},
+	"requirements": {
+		"faction": {
+			"type": "ALLIANCE",
+			"name": "Alliance"
+		}
+	}
+}
