@@ -1,4 +1,4 @@
-import { getItem } from "@/actions/getItem";
+import { getItem } from "@/shared/utils/getItem";
 
 export default async function ItemPage({ params: { id } }: { params: { id: string } }) {
 
