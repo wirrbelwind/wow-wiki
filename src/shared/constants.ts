@@ -18,4 +18,5 @@ export const ENTITY_TAGS = {
   PVP_TIER: 'pvp-tier',
   SPELL: 'spell',
   TECH_TALENT: 'tech-talent',
+	MOUNT: 'mount',
 } as const
