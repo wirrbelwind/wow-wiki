@@ -1,8 +1,8 @@
-import axios from "axios"
 import { getUser } from "./getUser"
 import { AchievementResponse } from "../types"
 import { getMedia } from "./getMedia"
 import { ENTITY_TAGS } from "../constants"
+import { $axios } from "./api"
 
 export const getAchievement = async (id: string) => {
 	const {
@@ -11,7 +11,7 @@ export const getAchievement = async (id: string) => {
 
 	const { location: { localeBN, region, regionHosting } } = getUser()
 
-	const achievementRequest = axios.get<AchievementResponse>(`${regionHosting}/data/wow/achievement/${id}`, {
+	const achievementRequest = $axios.get<AchievementResponse>(`${regionHosting}/data/wow/achievement/${id}`, {
 		params: {
 			namespace: `static-${region}`,
 			locale: localeBN,

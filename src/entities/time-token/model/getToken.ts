@@ -1,8 +1,8 @@
 'use server'
 
 import { TokenTime } from "../types"
-import axios from "axios"
 import { getUser } from "@/shared/utils/getUser"
+import { $axios } from "@/shared/utils/api"
 
 export const getTimeToken = async (): Promise<TokenTime> => {
 	const { location: { localeBN, region, regionHosting } } = getUser()
@@ -10,7 +10,7 @@ export const getTimeToken = async (): Promise<TokenTime> => {
 		credentials: { accessToken }
 	} = getUser()
 
-	const response = await axios.get<TokenTime>(`${regionHosting}/data/wow/token/index`, {
+	const response = await $axios.get<TokenTime>(`${regionHosting}/data/wow/token/index`, {
 		params: {
 			namespace: `dynamic-${region}`,
 			locale: localeBN,

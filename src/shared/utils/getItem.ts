@@ -1,7 +1,7 @@
 'use server'
 import { getUser } from "@/shared/utils/getUser";
-import axios from "axios";
 import { notFound } from "next/navigation";
+import { $axios } from "./api";
 
 export async function getItem(id: number) {
 	const {
@@ -10,7 +10,7 @@ export async function getItem(id: number) {
 	} = getUser()
 
 	try {
-		const response = await axios.get(`${regionHosting}/data/wow/item/${id}`, {
+		const response = await $axios.get(`${regionHosting}/data/wow/item/${id}`, {
 			params: {
 				namespace: `static-${region}`,
 				locale: localeBN,
