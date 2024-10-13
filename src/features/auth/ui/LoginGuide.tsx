@@ -17,7 +17,7 @@ export const LoginGuide = () => {
 	const progress = (step + 1) / StepList.length * 100
 
 	return (
-		<Card className="w-1/2">
+		<Card>
 			<CardBody>
 				<Progress aria-label="Progress of guide..." value={progress} />
 

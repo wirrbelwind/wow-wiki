@@ -4,11 +4,11 @@ import { Button, Input } from "@nextui-org/react"
 import { useFormState } from "react-dom"
 import { SubmitButton } from "./SubmitButton"
 import { login } from "../model/login"
-import { useState } from "react"
+import { useState, useTransition } from "react"
 import { LoginGuide } from "./LoginGuide"
 import { BsFillQuestionCircleFill } from "react-icons/bs";
 import { useBoolean } from "@/shared/utils/useBoolean"
-
+import { motion } from 'framer-motion'
 interface LoginFormProps {
 	envCredentials?: {
 		clientId?: string
@@ -40,10 +40,8 @@ export const LoginForm: React.FC<LoginFormProps> = ({ envCredentials }) => {
 	const showGuide = useBoolean(false)
 
 	return (
-		<div className="flex gap-5 w-5/12 justify-center">
-			{showGuide.value && <LoginGuide />}
-
-			<form className="w-1/2" action={action}>
+		<div className="flex gap-5 w-5/12 flex-col relative">
+			<form action={action} className="z-10">
 				{isDevMode &&
 					<Button
 						className="w-full"
@@ -82,6 +80,17 @@ export const LoginForm: React.FC<LoginFormProps> = ({ envCredentials }) => {
 				{state && JSON.stringify(state.errors)}
 				<SubmitButton />
 			</form>
+
+			{showGuide.value && (
+				<motion.div className="z-0"
+					initial={{ y: "-100%", opacity: 0 }} // Начальная позиция
+					animate={{ y: "0%", opacity: 1 }}    // Анимация появления
+					exit={{ y: "-100%", opacity: 0 }}     // Анимация исчезновения
+					transition={{ duration: 0.5 }}        // Длительность анимации
+				>
+					<LoginGuide />
+				</motion.div>
+			)}
 		</div>
 	)
 }
