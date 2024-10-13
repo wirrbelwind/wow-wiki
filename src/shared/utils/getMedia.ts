@@ -1,33 +1,21 @@
 import axios from "axios"
 import { getUser } from "./getUser"
+import { MediaResponse } from "../types"
 
-export interface MediaPayload {
-	key: {
-		href: string
-	}
-	id: number
-}
-
-export interface Media {
-	assets: Asset[]
-}
-export interface Asset {
-	key: string
-	value: string
-	id: number
-}
-
-export const getMedia = async (requestData: MediaPayload): Promise<Asset[]> => {
+export const getMedia = async (entityTag: string, id: number) => {
 	const {
 		credentials: { accessToken }
 	} = getUser()
 
-	const response = await axios.get<Media>(requestData.key.href, {
+	const { location: { localeBN, region, regionHosting } } = getUser()
+
+	const mediaResponse = await axios.get<MediaResponse>(`${regionHosting}/data/wow/${entityTag}/${id}`, {
 		params: {
+			namespace: `static-${region}`,
+			locale: localeBN,
 			access_token: accessToken
 		}
 	})
 
-	const media = await response.data
-	return media.assets
+	return mediaResponse.data.assets
 }
