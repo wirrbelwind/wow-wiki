@@ -5,17 +5,14 @@ import { ENTITY_TAGS } from "../constants"
 import { $axios } from "./api"
 
 export const getAchievement = async (id: string) => {
-	const {
-		credentials: { accessToken }
-	} = getUser()
+	
 
 	const { location: { localeBN, region, regionHosting } } = getUser()
 
 	const achievementRequest = $axios.get<AchievementResponse>(`${regionHosting}/data/wow/achievement/${id}`, {
 		params: {
 			namespace: `static-${region}`,
-			locale: localeBN,
-			access_token: accessToken
+			locale: localeBN
 		}
 	})
 

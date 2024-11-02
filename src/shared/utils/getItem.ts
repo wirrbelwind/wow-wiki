@@ -8,15 +8,22 @@ export async function getItem(id: number) {
 		credentials: { accessToken }
 	} = getUser()
 
-		const response = await $axios.get(`${regionHosting}/data/wow/item/${id}`, {
-			params: {
-				namespace: `static-${region}`,
-				locale: localeBN,
-				access_token: accessToken
-			}
-		})
-
-		const item = await response.data
-		return item
+		try {
+			const response = await $axios.get(`${regionHosting}/data/wow/item/${id}`, {
+				headers: {
+					Authorization: `Bearer ${accessToken}`
+				},
+				params: {
+					namespace: `static-${region}`,
+					locale: localeBN,
+				}
+			})
+	
+			const item = await response.data
+			return item
+		}
+		catch(e) {
+			console.log(e)
+		}
 	
 }
